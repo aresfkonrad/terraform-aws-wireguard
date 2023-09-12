@@ -8,9 +8,6 @@ terraform {
       source  = "hashicorp/aws"
       version = "> 3.0"
     }
-    template = {
-       source = "https://github.com/gxben/terraform-provider-template/releases/download/v2.2.0-m1/terraform-provider-template_2.2.0-m1_darwin_arm64.zip"
-    }
   }
 }
 
