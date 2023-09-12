@@ -89,28 +89,27 @@ resource "aws_autoscaling_group" "wireguard_asg" {
     create_before_destroy = true
   }
 
-  tags = [
-    {
+
+  tag {
       key                 = "Name"
       value               = aws_launch_configuration.wireguard_launch_config.name
       propagate_at_launch = true
-    },
-    {
+  }
+  tag {
       key                 = "Project"
       value               = "wireguard"
       propagate_at_launch = true
-    },
-    {
+  }
+  tag {
       key                 = "env"
       value               = var.env
       propagate_at_launch = true
-    },
-    {
+  }
+  tag {
       key                 = "tf-managed"
       value               = "True"
       propagate_at_launch = true
-    },
-  ]
+  }
 }
 
 resource "aws_ssm_parameter" "wireguard_server_private_key" {
